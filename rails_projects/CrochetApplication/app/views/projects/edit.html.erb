@@ -1,0 +1,12 @@
+<h1>Projects#edit</h1>
+<p>Find me in app/views/projects/edit.html.erb</p>
+<h3>Update Project Details</h3>
+<%= simple_form_for @project do |f| %>
+    <%= f.input :name %>
+    <%= f.input :instructions %>
+    <%= f.input :hook_size %>
+    <%= f.input :yarn_size %>
+    <%= f.input :difficulty %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
+  <% end %>

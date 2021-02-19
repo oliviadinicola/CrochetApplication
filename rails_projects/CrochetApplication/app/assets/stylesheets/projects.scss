@@ -1,0 +1,25 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.projects_index {
+    background: white;
+    color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.project_component{
+    background: rgb(192, 152, 255);
+    margin: auto;
+
+    width: 250px;
+    height: 250px;
+    justify-content: center;
+  
+}
+
+
+

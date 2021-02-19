@@ -1,0 +1,15 @@
+<h1>Projects#show</h1>
+<p>Find me in app/views/projects/show.html.erb</p>
+<p> This is an individual project page </p>
+
+
+
+<%= link_to "Home", projects_path %>
+<h1><%= @project.name %></h1>
+<h4><%= @project.instructions%></h4>
+<% if !@project.photo.nil? %>
+    <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+
+
