@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: 'projects#index'
+  resources :projects
+
+  get 'home', to:'projects#home'
+  get 'profile', to:'projects#profile'
+  get 'myprojects', to:'projects#myprojects'
 end

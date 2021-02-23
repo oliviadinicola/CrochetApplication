@@ -1,0 +1,32 @@
+<h1>Projects#edit</h1>
+<p>Find me in app/views/projects/edit.html.erb</p>
+
+<div class = "top_bar">
+    <div class = "search_projects_button">
+      <p><%= link_to "Search Projects", projects_path %></p>
+    </div>
+    <div class = "create_project_button">
+      <p><%= link_to "Create Project", new_project_path %></p>
+    </div>
+    <div class = "homepage_button">
+      <p><%= link_to "Home", home_path %></p>
+    </div>
+    <div class = "my_profile_button">
+      <p><%= link_to "My Profile", profile_path %></p>
+    </div>
+    <div class = "my_projects_button">
+      <p><%= link_to "My Projects", myprojects_path %></p>
+    </div>
+</div>
+
+
+<h3>Update Project Details</h3>
+<%= simple_form_for @project do |f| %>
+    <%= f.input :name %>
+    <%= f.input :instructions %>
+    <%= f.input :hook_size %>
+    <%= f.input :yarn_size %>
+    <%= f.input :difficulty %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
+  <% end %>

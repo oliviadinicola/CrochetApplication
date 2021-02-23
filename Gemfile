@@ -54,3 +54,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#react 
+gem 'react-rails'
+
+gem 'devise'
+
+gem 'simple_form'
+
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'cloudinary'

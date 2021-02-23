@@ -1,0 +1,44 @@
+<h1>Projects#index</h1>
+<p>Find me in app/views/projects/index.html.erb</p>
+
+
+
+
+<p> We have <%= @projects.count %> projects </p>
+
+
+<div class = "top_bar">
+    <div class = "search_projects_button">
+      <p><%= link_to "Search Projects", projects_path %></p>
+    </div>
+    <div class = "create_project_button">
+      <p><%= link_to "Create Project", new_project_path %></p>
+    </div>
+    <div class = "homepage_button">
+      <p><%= link_to "Home", home_path %></p>
+    </div>
+    <div class = "my_profile_button">
+      <p><%= link_to "My Profile", profile_path %></p>
+    </div>
+    <div class = "my_projects_button">
+      <p><%= link_to "My Projects", myprojects_path %></p>
+    </div>
+</div>
+
+<div class="projects_index">
+  <% @projects.each do |project| %>
+    <div class="project_component"> 
+      <%= link_to project.name, project_path(project)  %>
+      <td><%= button_to 'Edit', edit_project_path(project), method: 'get'%></td>
+      <td><%= button_to 'Remove', project_path(project), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+    </div>
+
+  <% end %>
+</div>
+ 
+<div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+
+
+
+
