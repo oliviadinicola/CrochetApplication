@@ -3,6 +3,41 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
+.project-title{
+    width: 100%;
+    text-align:center;
+}
+
+.project-information{
+    width: 100%;
+    display:flex;
+    
+}
+
+.project-hook-size{
+    text-align:center;
+    width:20%;
+}
+.project-yarn-size{
+    text-align:center;
+    width:20%;
+}
+
+.project-difficulty-level{
+    text-align:center;
+    width:20%;
+}
+
+.left-side-show{
+    width:50%;
+    text-align:left;
+}
+
+.right-side-show{
+    width:50%;
+    text-align:center;
+}
+
 .projects_index {
     background: white;
     color: black;
@@ -10,143 +45,26 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 40px;
 }
 .project_component{
-    background: rgb(192, 152, 255);
+    background: linear-gradient(180deg, rgba(16, 171, 212, 0.58) 0%, rgba(153, 51, 253, 0.38) 100%);
     margin: auto;
 
     width: 250px;
     height: 250px;
     justify-content: center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin: 40px;
   
 }
 
-//bar at top of website
-.top_bar{
+.home_page_icon{
     position: absolute;
-    width: 1925px;
-    height: 107px;
-    left: 0px;
-    top: 2px;
-    
-    background: linear-gradient(180deg, rgba(16, 171, 212, 0.58) 0%, rgba(153, 51, 253, 0.38) 100%);
+    margin: auto;
 }
 
 
 
-
-
-
-.search_projects_button{
-    position: absolute;
-    width: 307px;
-    height: 52px;
-    left: 626px;
-    top:-5px;
-
-    
-    font-family: Alef;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 49px;
    
-}
-
-.create_project_button{
-    position: absolute;
-    width: 269px;
-    height: 38px;
-    left: 933px;
-    top: -5px;
-
-    font-family: Alef;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 49px;
-}
-
-.homepage_button{
-
-    position: absolute;
-    width: 319px;
-    height: 36px;
-    left: 439px;
-    top: -5px;
-    
-    font-family: Alef;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 49px;
-    
-
-}
-
-.my_profile_button{
-    position: absolute;
-    width: 203px;
-    height: 47px;
-    left: 1500px;
-    top: -5px;
-
-    font-family: Alef;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 49px;
-    }
-
-.my_projects_button{
-    position: absolute;
-    width: 421px;
-    height: 84px;
-    left: 1220px;
-    top: -5px;
-    
-    font-family: Alef;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 49px;
-    
-}
-
-//links in top bar of page
-a:link {
-    text-decoration: none;
-    color: black;
-}
-
-a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    text-decoration: none;
-    color: black;
-}
-
-a:active {
-    text-decoration: none;
-    color: black;
-}
-
-a.top_bar:link, a:visited {
-    background: linear-gradient(180deg, rgba(36, 191, 232, 0.58) 0%, rgba(153, 51, 253, 0.38) 100%);
-    border: none;
-    color: black;
-    padding: 107px 40px;
-    text-align: center;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    text-decoration: none;
-    cursor: pointer;
-    display: inline-block;
-}
-
-a.top_bar:hover, a:active {
-    background: linear-gradient(180deg, rgba(36, 191, 232, 0.58) 0%, rgba(153, 51, 253, 0.38) 100%);
-}

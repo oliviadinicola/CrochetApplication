@@ -1,33 +1,50 @@
+<link rel="stylesheet" type="text/css" href="localhost:3000/css_root/flaticon.css">
 <h1>Projects#show</h1>
 <p>Find me in app/views/projects/show.html.erb</p>
 <p> This is an individual project page </p>
 
-
-<div class = "top_bar">
-    <div class = "search_projects_button">
-      <p><%= link_to "Search Projects", projects_path %></p>
-    </div>
-    <div class = "create_project_button">
-      <p><%= link_to "Create Project", new_project_path %></p>
-    </div>
-    <div class = "homepage_button">
-      <p><%= link_to "Home", home_path %></p>
-    </div>
-    <div class = "my_profile_button">
-      <p><%= link_to "My Profile", profile_path %></p>
-    </div>
-    <div class = "my_projects_button">
-      <p><%= link_to "My Projects", myprojects_path %></p>
-    </div>
+<div class="project-title">
+  <h1><%= @project.name %></h1>
 </div>
 
+<div class="project-information">
+  <div class="left-side-show">
+    <div class="project-details">
+      <div class = "project-difficulty-level">
+        <div class= "meter-icon">
+          <%= image_tag('meter.svg') %>
+        </div>
+        </p> Difficulty: </p>
+        <%= @project.difficulty %>
+      </div>
+      <div class = "project-hook-size"> 
+        <div class = "crochet-hook-icon"> 
+          <%= image_tag('crochet-hook.svg') %>
+        </div>
+      </p> Hook Size: </p>
+        <%= @project.hook_size %>
+      </div>
+      <div class = "project-yarn-size">
+        <div class = "yarn-ball-icon">
+          <%= image_tag('yarn-ball.svg') %>
+        </div>
+      </p> Yarn Size: </p>
+        <%= @project.yarn_size %>
+      </div>
+    </div>
+    <h3> Instructions </h3>
+      <p><%= @project.instructions%></p>
+  </div>
 
-<%= link_to "Home", projects_path %>
-<h1><%= @project.name %></h1>
-<h4><%= @project.instructions%></h4>
-<% if !@project.photo.nil? %>
-    <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+  <div class="right-side-show">
+  
+    <% if !@project.photo.nil? %>
+      <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <i class="far fa-heart fa-7x"></i>
+  </div>
+
+</div>
 
 
 

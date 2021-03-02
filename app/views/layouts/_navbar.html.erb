@@ -1,0 +1,28 @@
+<div class = "top_bar">
+  <div id = "search_projects_button" class="navbutton">
+    <button type="button" class="btn btn-light"><%= link_to "Search Projects", projects_path %></button>
+  </div>
+
+  <% if current_user %>
+    <div id = "create_project_button" class="navbutton">
+      <button type="button" class="btn btn-light"><%= link_to "Create Project", new_project_path %></button>
+    </div>
+  <% end %>
+  <div id = "homepage_button" class="navbutton">
+    <button type="button" class="btn btn-light"><%= link_to "Home", home_path %></button>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Profile</button>
+    <div class="dropdown-content">
+      <% if current_user %>
+        <%= link_to "My Profile", profile_path %>
+        <%= link_to "My Projects", myprojects_path %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
+    </div>
+  </div>
+</div>

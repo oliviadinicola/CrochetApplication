@@ -65,3 +65,5 @@ gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'cloudinary'
+
+gem 'bootstrap', '~> 4.0.0'
