@@ -3,6 +3,13 @@
 <p>Find me in app/views/projects/show.html.erb</p>
 <p> This is an individual project page </p>
 
+<p> This project has <%= @likes.count %> likes </p>
+
+<%= simple_form_for([@project, @like]) do |f| %>
+<%= f.submit "Add Like" %>
+<% end %>
+
+
 <div class="project-title">
   <h1><%= @project.name %></h1>
 </div>
@@ -41,7 +48,7 @@
     <% if !@project.photo.nil? %>
       <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
-    <i class="far fa-heart fa-7x"></i>
+    <i class="far fa-heart fa-4x"></i>
   </div>
 
 </div>

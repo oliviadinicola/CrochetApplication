@@ -1,3 +1,17 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.sign_in_feature{
+    position: relative;
+    text-align: center;
+    top: 150px;
+    font: Alef;
+    font-size: 24px;
+    margin: 30px;
+}
+
+.submit_button{
+    color: green;
+}

@@ -5,7 +5,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-
+    @likes = Like.where(project_id: params[:id]) 
+    @like = Like.new
   end
 
   def new
