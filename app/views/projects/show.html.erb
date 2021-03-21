@@ -3,12 +3,16 @@
 <p>Find me in app/views/projects/show.html.erb</p>
 <p> This is an individual project page </p>
 
+
 <p> This project has <%= @likes.count %> likes </p>
 
+<% if current_user %>
 <%= simple_form_for([@project, @like]) do |f| %>
-<%= f.submit "Add Like" %>
+  <%= f.submit "Add Like" %>
 <% end %>
 
+<%=link_to "Delete Like", project_like_path([@project, @like]), method: :delete %>
+<% end %>
 
 <div class="project-title">
   <h1><%= @project.name %></h1>
@@ -54,4 +58,16 @@
 </div>
 
 
+<%if current_user %>
+  <%= simple_form_for([@project, @comment]) do |f| %>
+    <%= f.input :comment_content %>
+      <div class="submit_button">
+      <%= f.button :submit %>
+      </div>
+  <% end %>
+<% end %>
 
+<% @comments.each do |comment| %>
+  <p>Comment by <%= comment.user.username || 'anonymous' %></p>
+  <p><%= comment.comment_content %> </p>
+<% end %>

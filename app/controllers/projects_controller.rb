@@ -7,6 +7,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @likes = Like.where(project_id: params[:id]) 
     @like = Like.new
+    @comments = Comment.where(project_id: params[:id])
+    @comment = Comment.new
   end
 
   def new

@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'projects#home'
   resources :projects do 
+    resources :comments
     resources :likes
+   
   end
 
   get 'home', to:'projects#home'

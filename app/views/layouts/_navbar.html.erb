@@ -4,33 +4,15 @@
   </div>
 
   <div id = "search_projects_button" class="navbutton">
-    <button type="button" class="btn btn-light"><%= link_to "Search Projects", projects_path %></button>
+    <button type="button" class="btn btn-light"><div class="searchlogo"><%= link_to image_tag('search.svg'), home_path %><%= link_to "Search Projects", projects_path %></div></button>
   </div>
 
   
   <% if current_user %>
     <div id = "create_project_button" class="navbutton">
-      <button type="button" class="btn btn-light"><%= link_to "Create Project", new_project_path %></button>
+      <button type="button" class="btn btn-light"><div class="createlogo"><%= link_to image_tag('animal-kingdom.svg'), home_path %><%= link_to "Create Project", new_project_path %></div></button>
     </div>
   <% end %>
-  
-
-<!--
-<div class="dropdown">
-    <button class="dropbtn">Profile</button>
-    <div class="dropdown-content">
-      <% if current_user %>
-        <%= link_to "My Profile", profile_path %>
-        <%= link_to "My Projects", myprojects_path %>
-        <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-      <% else %>
-        <%= link_to "Log In", new_user_session_path %>
-        <%= link_to "Sign Up", new_user_registration_path %>
-      <% end %>
-    </div>
-  </div>
-</div>
-//-->
 
 <div class="dropdown">
   <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

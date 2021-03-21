@@ -17,5 +17,8 @@
  @import 'layouts/navbar';
  @import 'layouts/individualproject';
  @import 'layouts/profiledropdown';
- @import 'layouts/homepage'
+ @import 'layouts/homepage';
+ @import 'layouts/profilepage';
+ 
+
  
