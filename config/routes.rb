@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   root to: 'projects#home'
   resources :projects do 
     resources :comments
-    resources :likes
-   
+    resources :likes, only: [:new, :create, :destroy]
   end
 
   get 'home', to:'projects#home'

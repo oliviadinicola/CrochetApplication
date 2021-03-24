@@ -1,19 +1,22 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
 
+<div class="home_page_title">
+<h3> Showing <%= @projects.count %> projects </h3>
+</div>
 
-
-
-<p> We have <%= @projects.count %> projects </p>
-
+<div class="search_and_filter">
+  <div class="search_placement">
+    <h3><%= render 'search_form' %></h3>
+  </div>  
+  <div class="filter_placement"
+  <h3><%= render 'filter_form' %></h3>
+  </div>
+</div>
 
 <div class="projects_index">
   <% @projects.each do |project| %>
       <div class="project_component">
           <div class="project_edit_remove_btns">
             <%= link_to project.name, project_path(project)  %>
-            <td><%= link_to 'Edit ', edit_project_path(project), method: 'get'%></td>
-            <td><%= link_to 'Remove', project_path(project), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
           </div> 
         <% if !project.photo.nil? %>
           <%= cl_image_tag project.photo.key, height: 250, width: 250, crop: :fill %>

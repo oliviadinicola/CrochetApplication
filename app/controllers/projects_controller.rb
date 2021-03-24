@@ -1,6 +1,17 @@
 class ProjectsController < ApplicationController
-  def index
-    @projects = Project.all
+  def index 
+    if params[:search]
+      @projects = Project.search(params[:search])
+      @projects = @projects.filter_by_difficulty(params[:difficulty]) if params[:difficulty].present?
+      @projects = @projects.filter_by_yarn_size(params[:yarn_size]) if params[:yarn_size].present?
+      @projects = @projects.filter_by_hook_size(params[:hook_size]) if params[:hook_size].present?  
+    else
+      @projects = Project.where(nil)
+      @projects = @projects.filter_by_difficulty(params[:difficulty]) if params[:difficulty].present?
+      @projects = @projects.filter_by_yarn_size(params[:yarn_size]) if params[:yarn_size].present?
+      @projects = @projects.filter_by_hook_size(params[:hook_size]) if params[:hook_size].present?  
+    end
+   
   end
 
   def show
@@ -58,6 +69,10 @@ class ProjectsController < ApplicationController
 
   private
     def project_params
-      params.require(:project).permit(:name, :instructions, :hook_size, :yarn_size, :difficulty, :photo)
+      params.require(:project).permit(:name, :instructions, :hook_size, :yarn_size, :difficulty, :photo, :search)
+    end
+
+    def filtering_params
+      params.permit(:difficulty, :hook_size, :yarn_size);
     end
 end

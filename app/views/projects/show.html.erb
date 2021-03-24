@@ -1,18 +1,8 @@
-<link rel="stylesheet" type="text/css" href="localhost:3000/css_root/flaticon.css">
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
-<p> This is an individual project page </p>
 
 
 <p> This project has <%= @likes.count %> likes </p>
 
-<% if current_user %>
-<%= simple_form_for([@project, @like]) do |f| %>
-  <%= f.submit "Add Like" %>
-<% end %>
 
-<%=link_to "Delete Like", project_like_path([@project, @like]), method: :delete %>
-<% end %>
 
 <div class="project-title">
   <h1><%= @project.name %></h1>
@@ -50,10 +40,23 @@
   <div class="right-side-show">
   
     <% if !@project.photo.nil? %>
-      <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :pad %>
     <% end %>
-    <i class="far fa-heart fa-4x"></i>
+    <div class="heartunheart">
+    <% if current_user %>
+      <% if @likes.find_by(user_id: current_user.id) %>
+        <%=link_to project_like_path([@project, @like]), method: :delete  do %>
+          <%= image_tag('heart.svg') %>
+        <% end %>
+      <% else %>
+        <%=link_to project_likes_path(:project_id => @project, :like_id => @like), method: :post do %>
+          <%= image_tag('emptyheart.svg') %>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
+  </div>
+ 
 
 </div>
 
@@ -68,6 +71,9 @@
 <% end %>
 
 <% @comments.each do |comment| %>
-  <p>Comment by <%= comment.user.username || 'anonymous' %></p>
-  <p><%= comment.comment_content %> </p>
+  <div class="individual-comment" >
+  <b><%= comment.user.username || 'anonymous' %> at <%= comment.created_at %>  : &nbsp </b>
+  <p> <%= comment.comment_content %> </p>
+  </div>
 <% end %>
+

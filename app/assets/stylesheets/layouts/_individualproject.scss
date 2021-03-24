@@ -50,17 +50,7 @@
 }
 
 
-.fa-heart{
-    width: 136px;
-    height: 119px;
-    position: relative;
-    top: 250px;
-    right: 275px;
-    background: -webkit-linear-gradient(rgba(16, 171, 212, 0.58), rgba(153, 51, 253, 0.38));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 
-}
 
 .yarn-ball-icon{
     width: 60px;
@@ -86,4 +76,15 @@
     top: 5px;
 }
 
+.individual-comment{
+    display: flex;
+    margin: 20px;
+    font-size: 15px;
+    padding: 10px;
+
+}
+
+.like_button{
+    opacity: 0%;
+}
 
