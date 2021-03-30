@@ -1,13 +1,13 @@
-
-
+ 
 <p> This project has <%= @likes.count %> likes </p>
-
-
-
+ 
+ 
+ 
 <div class="project-title">
   <h1><%= @project.name %></h1>
+  <h2>by <%=@project.user.username %> </h2>
 </div>
-
+ 
 <div class="project-information">
   <div class="left-side-show">
     <div class="project-details">
@@ -36,7 +36,7 @@
     <h3> Instructions </h3>
       <p><%= @project.instructions%></p>
   </div>
-
+ 
   <div class="right-side-show">
   
     <% if !@project.photo.nil? %>
@@ -46,21 +46,21 @@
     <% if current_user %>
       <% if @likes.find_by(user_id: current_user.id) %>
         <%=link_to project_like_path([@project, @like]), method: :delete  do %>
-          <%= image_tag('heart.svg') %>
+            <%= image_tag('heart.svg') %>
         <% end %>
       <% else %>
         <%=link_to project_likes_path(:project_id => @project, :like_id => @like), method: :post do %>
-          <%= image_tag('emptyheart.svg') %>
+            <%= image_tag('emptyheart.svg') %>
         <% end %>
       <% end %>
     <% end %>
   </div>
   </div>
  
-
+ 
 </div>
-
-
+ 
+ 
 <%if current_user %>
   <%= simple_form_for([@project, @comment]) do |f| %>
     <%= f.input :comment_content %>
@@ -69,11 +69,10 @@
       </div>
   <% end %>
 <% end %>
-
+ 
 <% @comments.each do |comment| %>
   <div class="individual-comment" >
   <b><%= comment.user.username || 'anonymous' %> at <%= comment.created_at %>  : &nbsp </b>
   <p> <%= comment.comment_content %> </p>
   </div>
 <% end %>
-

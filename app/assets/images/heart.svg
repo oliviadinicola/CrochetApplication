@@ -1,3 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="url('#myGradient')" class="bi bi-heart-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+  <defs>
+    <linearGradient id="myGradient" gradientTransform="rotate(90)">
+      <stop offset="0%"  stop-color="#10aad4" stop-opacity="0.58" />
+      <stop offset= "100%" stop-color="#9833fd"  stop-opacity="0.58"/>
+    </linearGradient>
+  </defs>
 </svg>

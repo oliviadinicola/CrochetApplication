@@ -1,8 +1,8 @@
-
+ 
 <div class="home_page_title">
 <h3> Showing <%= @projects.count %> projects </h3>
 </div>
-
+ 
 <div class="search_and_filter">
   <div class="search_placement">
     <h3><%= render 'search_form' %></h3>
@@ -11,23 +11,23 @@
   <h3><%= render 'filter_form' %></h3>
   </div>
 </div>
-
+ 
 <div class="projects_index">
   <% @projects.each do |project| %>
-      <div class="project_component">
-          <div class="project_edit_remove_btns">
-            <%= link_to project.name, project_path(project)  %>
-          </div> 
-        <% if !project.photo.nil? %>
-          <%= cl_image_tag project.photo.key, height: 250, width: 250, crop: :fill %>
-        <% end %>
+      <div class="project_component"> 
+      <% if !project.photo.nil? %>
+        <%= cl_image_tag project.photo.key, height: 250, width: 250, crop: :fill%>
+      <% end %> 
+          <div class="overlay">
+              <b>
+                <%= link_to project.name, project_path(project) %>
+              </b>
+          </div>   
       </div>
   <% end %>
 </div>
-
+ 
 <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
-
 
 
 
