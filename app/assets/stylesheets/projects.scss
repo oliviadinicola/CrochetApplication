@@ -61,6 +61,7 @@
  
   
 }
+
 .project_component:hover{
     cursor:pointer;
     color:#fff490;
@@ -92,19 +93,26 @@
  
  
 .searchbar_and_button{
-    display: flex;
+  
  
 }
  
 .search_and_filter{
-    
+    position: relative;
+    text-align: center;
+    font: Alef;
+    font-size: 24px;
+    margin: 30px;
 }
  
 .search_placement{
-    position: relative;
+   
 }
  
 .filter_placement{
-    position: relative;
-   
+    
+}
+
+.project_edit_remove_btns{
+  
 }
