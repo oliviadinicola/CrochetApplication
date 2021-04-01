@@ -70,7 +70,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'mimemagic', '~> 0.3.2'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 1.2.3'
 end
 
 group :development, :test do
