@@ -52,12 +52,8 @@ a.top_bar:hover, a:active {
 
 }
 
-.btn{
-    height: 100px;
-    width: 300px;
-    font-size: 24px;
-    font: Alef;
-}
+
+
 
 .btn:hover{
     background-image:linear-gradient(180deg, rgba(36, 191, 232, 0.58) 0%, rgba(153, 51, 253, 0.38) 100%) !important;
@@ -68,6 +64,10 @@ a.top_bar:hover, a:active {
 .btn-light, .btn-light:active, .btn-light:visited, .btn-light:focus, .btn-light:active:focus {
     background-image:linear-gradient(180deg, rgba(36, 191, 232, 0.58) 0%, rgba(153, 51, 253, 0.38) 100%) !important;
     border: none;
+    height: 100px;
+    width: 300px;
+    font-size: 24px;
+    font: Alef;
 }
 
 .logo {
@@ -93,4 +93,15 @@ a.top_bar:hover, a:active {
 
 .dropdown-content{
     width: 300px !important;
+}
+
+
+
+
+.btn-outline-light, .btn-outline-light:active, .btn-outline-light:visited, .btn-outline-light:focus, .btn-outline-light:active:focus {
+    color:linear-gradient(180deg, rgba(36, 191, 232, 0.58) 0%, rgba(153, 51, 253, 0.38) 100%) !important;
+    background-image:linear-gradient(180deg, rgba(36, 191, 232, 0.58) 0%, rgba(153, 51, 253, 0.38) 100%) !important;
+    border: none !important;
+    font: Alef;
+
 }

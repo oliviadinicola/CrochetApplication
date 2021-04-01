@@ -67,3 +67,5 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 
 gem 'bootstrap', '~> 4.0.0'
+
+gem 'mimemagic', '~> 0.3.2'
