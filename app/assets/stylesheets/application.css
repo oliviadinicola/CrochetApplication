@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import "font-awesome";
+
  
  @import 'layouts/navbar';
  @import 'layouts/individualproject';
