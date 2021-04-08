@@ -1,0 +1,19 @@
+<h3> <%= @user.username %> 's projects</h3>
+
+<div class="projects_index">
+    <% @projects.each do |p|%>
+        <div class="project_component"> 
+            <% if !p.photo.nil? %>
+                <%= cl_image_tag p.photo.key, height: 250, width: 250, crop: :fill%>
+            <% end %> 
+        <div class="overlay">
+            <b>
+            <%= link_to p.name, project_path(p) %>
+            </b>
+        </div>   
+        </div>
+    <% end %>
+</div>
+
+
+ 
