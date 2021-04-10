@@ -5,7 +5,7 @@
  
 <div class="project-title">
   <h1><%= @project.name %></h1>
-  <h2>by <%=@project.user.username %> </h2>
+  <%=link_to @project.user.username, custom_user_projects_path(@project.user_id)%>
 </div>
  
 <div class="project-information">

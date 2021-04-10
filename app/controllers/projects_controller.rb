@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
   
   def create
     @project = Project.new(project_params)
-    @project.user = User.first #needs to be fixed later 
+    @project.user = current_user
 
     if @project.save
       redirect_to @project
