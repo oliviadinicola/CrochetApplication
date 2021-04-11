@@ -16,16 +16,16 @@
  
 .project-hook-size{
     text-align:center;
-    width:20%;
+    width:40%;
 }
 .project-yarn-size{
     text-align:center;
-    width:20%;
+    width:40%;
 }
  
 .project-difficulty-level{
     text-align:center;
-    width:20%;
+    width:40%;
 }
  
 .left-side-show{
@@ -62,6 +62,7 @@
   
 }
 
+
 .project_component:hover{
     cursor:pointer;
     color:#fff490;
@@ -89,13 +90,7 @@
   }
  
    
- 
- 
- 
-.searchbar_and_button{
-  
- 
-}
+
  
 .search_and_filter{
     position: relative;
@@ -103,16 +98,4 @@
     font: Alef;
     font-size: 24px;
     margin: 30px;
-}
- 
-.search_placement{
-   
-}
- 
-.filter_placement{
-    
-}
-
-.project_edit_remove_btns{
-  
 }

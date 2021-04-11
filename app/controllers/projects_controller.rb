@@ -2,15 +2,12 @@ class ProjectsController < ApplicationController
   def index 
     if params[:search]
       @projects = Project.search(params[:search])
-      @projects = @projects.filter_by_difficulty(params[:difficulty]) if params[:difficulty].present?
-      @projects = @projects.filter_by_yarn_size(params[:yarn_size]) if params[:yarn_size].present?
-      @projects = @projects.filter_by_hook_size(params[:hook_size]) if params[:hook_size].present?  
     else
       @projects = Project.where(nil)
-      @projects = @projects.filter_by_difficulty(params[:difficulty]) if params[:difficulty].present?
-      @projects = @projects.filter_by_yarn_size(params[:yarn_size]) if params[:yarn_size].present?
-      @projects = @projects.filter_by_hook_size(params[:hook_size]) if params[:hook_size].present?  
     end
+    @projects = @projects.filter_by_difficulty(params[:difficulty]) if params[:difficulty].present?
+    @projects = @projects.filter_by_yarn_size(params[:yarn_size]) if params[:yarn_size].present?
+    @projects = @projects.filter_by_hook_size(params[:hook_size]) if params[:hook_size].present?  
    
   end
 

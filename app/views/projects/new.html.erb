@@ -9,8 +9,8 @@
     <%= f.input :name %>
     <%= f.input :instructions %>
     <%= f.input :hook_size %>
-    <%= f.input :yarn_size %>
-    <%= f.input :difficulty %>
+    <%= f.input :yarn_size, label: 'Yarn Weight (1 -> Superfine, 2 -> Fine, 3 -> Light, 4 -> Medium, 5 -> Bulky, 6 -> Super Bulky, 7 -> Jumbo)' %>
+    <%= f.input :difficulty,  label: 'Difficulty 1 ->( Beginner, 2 -> Intermediate, 3 -> Advanced)' %>
     <%= f.input :photo, as: :file %>
     <div class="submit_button">
     <%= f.button :submit %>
