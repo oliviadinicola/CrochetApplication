@@ -8,69 +8,81 @@
   </div>
 </div>
  
+
+
+ <div class= "row">
+  <div class="project-details">
+          <div class = "project-difficulty-level">
+            <div class= "meter-icon">
+              <%= image_tag('meter.svg') %>
+            </div>
+            </p> Difficulty: </p>
+            <%= @project.difficulty %>
+          </div>
+          <div class = "project-hook-size"> 
+            <div class = "crochet-hook-icon"> 
+              <%= image_tag('crochet-hook.svg') %>
+            </div>
+          </p> Hook Size: </p>
+            <%= @project.hook_size %>
+          </div>
+          <div class = "project-yarn-size">
+            <div class = "yarn-ball-icon">
+              <%= image_tag('yarn-ball.svg') %>
+            </div>
+          </p> Yarn Weight: </p>
+            <% if  @project.yarn_size ==  1 %>
+              <p> Superfine (1)</p>
+            <% elsif @project.yarn_size ==  2 %>
+              <p> Fine (2)</p>
+            <% elsif @project.yarn_size ==  3 %>
+              <p> Light (3) </p>
+            <% elsif @project.yarn_size ==  4 %>
+              <p> Medium (4) </p>
+            <% elsif @project.yarn_size ==  5 %>
+              <p> Bulky (5) </p>
+            <% elsif @project.yarn_size ==  6 %>
+              <p> Super Bulky (6) </p>
+            <% elsif @project.yarn_size ==  7 %>
+              <p> Jumbo (7) </p>
+            <% end %>
+          </div>
+        </div>
+  </div>
+  
 <div class="project-information">
-  <div class="left-side-show">
-    <div class="project-details">
-      <div class = "project-difficulty-level">
-        <div class= "meter-icon">
-          <%= image_tag('meter.svg') %>
-        </div>
-        </p> Difficulty: </p>
-        <%= @project.difficulty %>
-      </div>
-      <div class = "project-hook-size"> 
-        <div class = "crochet-hook-icon"> 
-          <%= image_tag('crochet-hook.svg') %>
-        </div>
-      </p> Hook Size: </p>
-        <%= @project.hook_size %>
-      </div>
-      <div class = "project-yarn-size">
-        <div class = "yarn-ball-icon">
-          <%= image_tag('yarn-ball.svg') %>
-        </div>
-      </p> Yarn Weight: </p>
-        <% if  @project.yarn_size ==  1 %>
-          <p> Superfine (1)</p>
-        <% elsif @project.yarn_size ==  2 %>
-          <p> Fine (2)</p>
-        <% elsif @project.yarn_size ==  3 %>
-          <p> Light (3) </p>
-        <% elsif @project.yarn_size ==  4 %>
-          <p> Medium (4) </p>
-        <% elsif @project.yarn_size ==  5 %>
-          <p> Bulky (5) </p>
-        <% elsif @project.yarn_size ==  6 %>
-          <p> Super Bulky (6) </p>
-        <% elsif @project.yarn_size ==  7 %>
-          <p> Jumbo (7) </p>
+  <div class= "row">
+    <div class="col lg-6 left-side-show">
+      <h3> Instructions </h3>
+        <p><%= @project.instructions%></p>
+    </div>
+
+  
+    
+    <div class="col lg-6 right-side-show">
+    
+    
+        <% if !@project.photo.nil? %>
+          <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :pad %>
+        <% end %>
+    
+      <div class="heartunheart">
+        <% if current_user %>
+          <% if @likes.find_by(user_id: current_user.id) %>
+            <%=link_to project_like_path([@project, @like]), method: :delete  do %>
+                <%= image_tag('heart.svg') %>
+            <% end %>
+          <% else %>
+            <%=link_to project_likes_path(:project_id => @project, :like_id => @like), method: :post do %>
+                <%= image_tag('emptyheart.svg') %>
+            <% end %>
+          <% end %>     
+          <p> <%= @likes.count %> likes </p>
         <% end %>
       </div>
     </div>
-    <h3> Instructions </h3>
-      <p><%= @project.instructions%></p>
   </div>
- 
-  <div class="right-side-show">
   
-    <% if !@project.photo.nil? %>
-      <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :pad %>
-    <% end %>
-    <div class="heartunheart">
-    <% if current_user %>
-      <% if @likes.find_by(user_id: current_user.id) %>
-        <%=link_to project_like_path([@project, @like]), method: :delete  do %>
-            <%= image_tag('heart.svg') %>
-        <% end %>
-      <% else %>
-        <%=link_to project_likes_path(:project_id => @project, :like_id => @like), method: :post do %>
-            <%= image_tag('emptyheart.svg') %>
-        <% end %>
-      <% end %>     
-      <p> <%= @likes.count %> likes </p>
-    <% end %>
-  </div>
-  </div>
  
  
 </div>
