@@ -10,7 +10,7 @@
       <div class="project_component">
           <div class="project_edit_remove_btns">
             <%= link_to project.name, project_path(project)  %>
-            <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= link_to 'Edit ', edit_project_path(project), method: 'get'%></td>
+            <td>&nbsp &nbsp &nbsp &nbsp &nbsp<%= link_to 'Edit ', edit_project_path(project), method: 'get'%></td>
             <td><%= link_to 'Remove', project_path(project), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
           </div> 
         <% if !project.photo.nil? %>
