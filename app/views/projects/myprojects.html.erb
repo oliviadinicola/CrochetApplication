@@ -3,22 +3,19 @@
 </div>
 
 
+  
 
-<div class="projects_index">
+  <div class="projects_index">
   <% current_user.projects.each do |project| %>
-    <div class="project_edit_remove_btns">
-      <td><%= link_to 'Edit ', edit_project_path(project), method: 'get'%></td>
-      <td><%= link_to 'Remove', project_path(project), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
-    </div> 
-    <div class="project_component"> 
-      <% if !project.photo.nil? %>
-        <%= cl_image_tag project.photo.key, height: 250, width: 250, crop: :fill%>
-      <% end %> 
-        <div class="overlay">
-          <b>
-            <%= link_to project.name, project_path(project) %>
-          </b>
-        </div>   
-    </div>
+      <div class="project_component">
+          <div class="project_edit_remove_btns">
+            <%= link_to project.name, project_path(project)  %>
+            <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= link_to 'Edit ', edit_project_path(project), method: 'get'%></td>
+            <td><%= link_to 'Remove', project_path(project), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+          </div> 
+        <% if !project.photo.nil? %>
+          <%= cl_image_tag project.photo.key, height: 250, width: 250, crop: :fill %>
+        <% end %>
+      </div>
   <% end %>
 </div>

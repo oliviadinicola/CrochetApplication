@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get '/projects/:project_id/likes/:id' => 'likes#destroy'
 
 
-
   get 'home', to:'projects#home'
   get 'profile', to:'users#profile'
   get 'myprojects', to:'projects#myprojects'
